@@ -1,0 +1,66 @@
+<header>
+  <!-- link css files here -->
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <!-- navigation -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
+          width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
+        我的餐廳清單
+      </a>
+    </div>
+  </nav>
+
+  <div class="banner"></div>
+</header>
+
+<!-- search bar -->
+<div class="container search-bar">
+  <div class="search-bar-outer">
+    <div class="search-bar-inner">
+      <!-- 搜尋方式by選擇餐廳類型 -->
+      <form action="/search">
+        <h4 class="mb-2">餐廳類型：</h4>
+        <div class="input-group">
+          <select class="my-2" name="category">
+            <option>{{category}}</option>
+            <option value="中東料理">中東料理</option>
+            <option value="日本料理">日本料理</option>
+            <option value="義式餐廳">義式餐廳</option>
+            <option value="美式">美式</option>
+            <option value="酒吧">酒吧</option>
+            <option value="咖啡">咖啡</option>
+            <option value="全部">全部</option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+      <!-- 搜尋方式by輸入關鍵字 -->
+      <form action="/search">
+        <h4 class="mb-2">尋找餐廳：</h4>
+        <div class="input-group">
+          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳名稱關鍵字" aria-label="Restaurant Name..."
+            value="{{keyword}}" aria-describedby="search-button">
+          <div class="input-group-append">
+            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- 搜尋沒有結果時之頁面提示 -->
+<div class="text container my-3">
+  <div class="row">
+    <div class="col-md-12 col-12 mx-auto">
+      <h5>找不到包含關鍵字《{{keyword}}》的餐廳</h5>
+      <h7></h7>
+      <h5>請再試試其他關鍵字 or 直接選擇餐廳類型</h5>
+    </div>
+  </div>
+</div>
